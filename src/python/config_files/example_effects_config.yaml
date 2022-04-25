@@ -1,0 +1,41 @@
+#
+# Example file containing all the effects so far
+#
+
+#
+# Basic config for the whole simulation
+#
+pixel_file: "/home/ArchLinux/dano/Projects/soul-spot/unity/SOuL Spot/Assets/Exports/LEDs.json"
+port: 12508
+log_level: info
+stats: true
+
+#
+# All effects will be layered
+# With all these effects its hard to see each one, try running one at a time
+#
+effects:
+- command_name: set_color
+  arguments:
+    color: [1.0, 1.0, 1.0, 1.0]
+- command_name: pulse
+  arguments:
+    speed: 0.5
+    color: [0.0, 1.0, 0.0, 1.0]
+- command_name: spotlight
+  arguments:
+    speed: 160.0
+    color: [1.0, 0.0, 1.0, 1.0]
+    min_angle: 10
+    max_angle: 60
+- command_name: spotlight
+  arguments:
+    speed: -10.0
+    color: [0.0, 1.0, 1.0, 1.0]
+    min_angle: 20
+    max_angle: 45
+# Example of an effect that is commented out
+# - command_name: pulse
+#   arguments:
+#     speed: 10.5
+#     color: [1.0, 1.0, 1.0, 1.0]
