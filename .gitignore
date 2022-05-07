@@ -1,3 +1,4 @@
 *.pyc
 __pycache__
 *.blend1
+a.out
