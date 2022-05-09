@@ -15,27 +15,34 @@ stats: true
 # With all these effects its hard to see each one, try running one at a time
 #
 effects:
-- command_name: set_color
+# Example of an effect that is commented out
+# - name: pulse
+#   arguments:
+#     speed: 10.5
+#     color: [1.0, 1.0, 1.0, 1.0]
+- name: set_color
   arguments:
     color: [1.0, 1.0, 1.0, 1.0]
-- command_name: pulse
+- name: pulse
   arguments:
     speed: 0.5
     color: [0.0, 1.0, 0.0, 1.0]
-- command_name: spotlight
+- name: spotlight
   arguments:
     speed: 160.0
     color: [1.0, 0.0, 1.0, 1.0]
     min_angle: 10
     max_angle: 60
-- command_name: spotlight
+- name: spotlight
+  arguments:
+    speed: 160.0
+    color: [0.0, 1.0, 0.0, 1.0]
+    min_angle: 10
+    max_angle: 60
+    start_angle: 180
+- name: spotlight
   arguments:
     speed: -10.0
     color: [0.0, 1.0, 1.0, 1.0]
     min_angle: 20
     max_angle: 45
-# Example of an effect that is commented out
-# - command_name: pulse
-#   arguments:
-#     speed: 10.5
-#     color: [1.0, 1.0, 1.0, 1.0]

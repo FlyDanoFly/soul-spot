@@ -4,9 +4,9 @@ from .BaseEffect import BaseEffect
 from managers.PixelMatrix import PixelMatrix
 
 
-class Effect(BaseEffect):
+class Pulse(BaseEffect):
+    name = 'pulse'
     description = 'Slowly ramp a color up and down'
-    command_name = 'pulse'
 
     class Direction(Enum):
         INCREASING = auto()
@@ -16,7 +16,7 @@ class Effect(BaseEffect):
         self.color = self.color(color)
         if not self.is_valid_color(self.color):
             raise ValueError('Pixel values must be between 0.0 and 1.0')
-        self.direction = Effect.Direction.INCREASING
+        self.direction = Pulse.Direction.INCREASING
         self.intensity = 0.0
         self.speed = speed
 
@@ -26,16 +26,16 @@ class Effect(BaseEffect):
             pixel.color = self.color
 
     def update(self, time_delta: float) -> bool:
-        if self.direction is Effect.Direction.INCREASING:
+        if self.direction is Pulse.Direction.INCREASING:
             self.intensity += self.speed * time_delta
         else:
             self.intensity -= self.speed * time_delta
 
         if self.intensity > 1.0:
-            self.direction = Effect.Direction.DECREASING
+            self.direction = Pulse.Direction.DECREASING
             self.intensity = 2.0 - self.intensity
         elif self.intensity < 0.0:
-            self.direction = Effect.Direction.INCREASING
+            self.direction = Pulse.Direction.INCREASING
             self.intensity = -self.intensity
 
         self.color[3] = self.intensity

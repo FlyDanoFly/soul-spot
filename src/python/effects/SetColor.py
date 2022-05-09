@@ -2,9 +2,9 @@ from .BaseEffect import BaseEffect
 from managers.PixelMatrix import PixelMatrix
 
 
-class Effect(BaseEffect):
+class SetColor(BaseEffect):
+    name = 'set_color'
     description = 'Set all the pixels to a color'
-    command_name = 'set_color'
 
     def setup(self, color) -> None:
         self.fg = self.color(color)

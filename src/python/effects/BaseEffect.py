@@ -5,13 +5,13 @@ import numpy as np
 
 class BaseEffect:
     # Base classes need to define these members:
+    # name = 'The name of the effect'
     # description = 'A description of the effect'
-    # command_name = 'The name of the command'
 
     def __init__(self):
         # Ensure the minimum has been defined
+        assert hasattr(self, 'name'), 'Effects must define "name"'
         assert hasattr(self, 'description'), 'Effects must define "descrption"'
-        assert hasattr(self, 'command_name'), 'Effects must define "command_name"'
 
     #
     # Helper methods

@@ -7,7 +7,7 @@ import time
 
 import yaml
 
-from effects import commands
+from effects import effects
 from managers.EffectManager import EffectManager
 from managers.PixelMatrix import PixelMatrix
 from utils.send import PixelSender
@@ -50,9 +50,9 @@ def main():
     # Set up the effect class to run
     effect_manager = EffectManager()
     for effect_config in effects_config['effects']:
-        effect_name = effect_config['command_name']
+        effect_name = effect_config['name']
         effect_arguments = effect_config['arguments']
-        effect_class = commands[effect_name]
+        effect_class = effects[effect_name]
         effect = effect_class()
         effect.setup(**effect_arguments)
         effect_manager.add_effect(effect)

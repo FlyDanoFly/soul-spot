@@ -10,16 +10,16 @@ def _angle_between_vectors(v0, v1):
     return np.degrees(angle)
 
 
-class Effect(BaseEffect):
+class Spotlight(BaseEffect):
+    name = 'spotlight'
     description = 'Spin a red circle around the globe horizontal plane'
-    command_name = 'spotlight'
 
-    def setup(self, color, min_angle, max_angle, speed=1.0):
+    def setup(self, color, min_angle, max_angle, start_angle=0.0, speed=1.0):
         self.fg = self.color(color)
         if not self.is_valid_color(self.fg):
             raise ValueError()('Foreground color is invalid')
         self.speed = speed
-        self.degrees = 0.0
+        self.degrees = start_angle
         self.min_angle = min_angle
         self.max_angle = max_angle
         
@@ -49,8 +49,9 @@ class Effect(BaseEffect):
         min_angle = self.min_angle
         max_angle = self.max_angle
         self.degrees += time_delta * self.speed
-        while self.degrees > 360.0:
-            self.degrees -= 360.0
+        self.degrees %= 360.0
+        while self.degrees < 0.0:
+            self.degrees += 360.0
         rads = np.radians(self.degrees)
         normal = np.array((np.cos(rads), 0, np.sin(rads)))
         self.set_spotlight_from_normal(self.pixels, normal, fg, min_angle, max_angle)
