@@ -1,0 +1,95 @@
+{
+  "main": {
+    "id": "29c79b507531485e",
+    "type": "split",
+    "children": [
+      {
+        "id": "5724599f9d0244bb",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Power requirements.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2bc8dd88ea37cc02",
+    "type": "split",
+    "children": [
+      {
+        "id": "420506a0641e8cb9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "020379ea3c0d1b4f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a5e452acde187802",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "10e5dfeef2c38b79",
+    "type": "split",
+    "children": [
+      {
+        "id": "11bc812e359e7f5c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37aeb54434d0bc95",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Power requirements.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5724599f9d0244bb",
+  "lastOpenFiles": [
+    "Power requirements.md",
+    "Keeping the glow.md"
+  ]
+}
